@@ -1,0 +1,106 @@
+body{
+ background-color: grey;
+ margin: 0;
+ font-family: Arial, sans-serif;
+}
+
+/*Section layout */
+section {
+ max-width: 900px;
+ margin: 24px auto;
+ padding: 0 16px;
+}
+
+/*Banner*/
+h1{
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+    font-family: "Rubik Mono One", sans-serif;
+    font-weight: 400;
+    padding: 20px;
+    margin: 0;
+}
+
+h2{
+    color: rgb(37, 24, 24);
+    text-align: center;
+    font-size: 2rem;
+    font-family: "Rubik Mono One", sans-serif;
+    font-weight: 350;
+    padding: 20px;
+    margin: 0;
+}
+
+/* About CSS layout */
+#About {
+    text-align: center;
+    font-family: "Fjalla One", sans-serif;
+}
+
+#About img {
+    display: center;
+    margin: 0 auto 20px;
+    max-width: 250px;
+    border-radius: 12px;
+}
+
+#About p {
+    font-family: "Fjalla One", sans-serif;
+    font-size: 18px;
+    line-height: 1.5; 
+    font-weight: 700;
+    color: white;
+}
+
+/*Experience CSS layout*/
+#Experience {
+    text-align: left;
+    font-family: "Fjalla One", sans-serif;
+    margin-left: 50px;
+    line-height: 1.6;
+}
+
+ul{
+    list-style-type: none;
+    padding-left:0;
+}
+
+#Experience li {
+  color: white;
+  margin: 10px 20;
+  padding: 10px;
+  border-radius: 20px;
+  font-family: "Lobster-Two", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+strong {
+    color:black;
+}
+
+/*Connect CSS layout*/
+#Connect ul {
+  list-style-type: none;
+  padding-left:0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+#Connect li a{
+  font-family: "Fjalla One", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 24px;
+  line-height: 1.6;
+  text-decoration: none;
+  color: rgb(11, 11, 77);
+  text-align: center;
+  font-weight: 800;
+}
+
+#Connect li a:hover {
+  color: white;
+}
