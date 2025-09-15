@@ -1,7 +1,33 @@
 body{
  background-color: grey;
  margin: 0;
+ padding: 40;
  font-family: Arial, sans-serif;
+}
+
+/*Navigation bar layout */
+nav {
+ background-color: rgb(214, 210, 192);
+ padding: 18px;
+ position: sticky;
+ top: 0;
+}
+
+nav ul {
+ list-style-type: none;
+ margin: 0;
+ padding: 0;
+ display: flex;
+ justify-content: center;
+ gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+    font-size: 1.4rem;
+    font-family: "Lobster-Two", sans-serif;;
 }
 
 /*Section layout */
@@ -9,6 +35,57 @@ section {
  max-width: 900px;
  margin: 24px auto;
  padding: 0 16px;
+}
+
+.section {
+    background-color: rgb(68, 40, 40);
+    border-radius: 12px;
+    border-bottom: 5px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Experience Section with Flexbox */
+.expierience-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 50px;
+    padding: 20px;
+    border-bottom: 1px solid rgba(225,255,255,0.5);
+    font-family: "Lobster-Two", sans-serif;
+  
+}
+
+.job-title {
+    font-weight: 900;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    padding: 0px;
+    padding-bottom: 20px;
+    font-family: "Fjalla One", sans-serif;
+    color:antiquewhite;
+   
+}
+
+.job-date {
+    font-style: italic;
+    color: #d1b3b3;
+    margin-bottom: 20px; 
+    font-family: "Lobster-Two", sans-serif;
+    align-self: center;
+    margin-left: 80px;
+    font-weight: 700;
+}
+
+.job-description {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.7;
+    max-width: 700px;
+    color :antiquewhite;
+    font-family: "Fjalla One", sans-serif;
 }
 
 /*Banner*/
@@ -23,9 +100,9 @@ h1{
 }
 
 h2{
-    color: rgb(37, 24, 24);
+    color: rgb(163, 157, 157);
     text-align: center;
-    font-size: 2rem;
+    font-size: 3rem;
     font-family: "Rubik Mono One", sans-serif;
     font-weight: 350;
     padding: 20px;
@@ -53,54 +130,37 @@ h2{
     color: white;
 }
 
-/*Experience CSS layout*/
-#Experience {
-    text-align: left;
-    font-family: "Fjalla One", sans-serif;
-    margin-left: 50px;
-    line-height: 1.6;
-}
 
-ul{
-    list-style-type: none;
-    padding-left:0;
-}
 
-#Experience li {
-  color: white;
-  margin: 10px 20;
-  padding: 10px;
-  border-radius: 20px;
-  font-family: "Lobster-Two", sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-}
 
-strong {
-    color:black;
-}
+
 
 /*Connect CSS layout*/
 #Connect ul {
   list-style-type: none;
-  padding-left:0;
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
 }
-
 
 #Connect li a{
   font-family: "Fjalla One", sans-serif;
   font-size: 2rem;
-  margin-bottom: 24px;
+  font-weight: 800;
+  display: inline-block;
+  padding: 6px 12px;
   line-height: 1.6;
   text-decoration: none;
-  color: rgb(11, 11, 77);
+  color: rgb(18, 18, 49);
   text-align: center;
-  font-weight: 800;
 }
+
 
 #Connect li a:hover {
   color: white;
+  transform: translateY(-1px);
+  transition: all 0.3s ease;
 }
