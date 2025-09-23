@@ -14,9 +14,12 @@ body{
 /*Navigation bar layout */
 nav {
  background-color: rgb(214, 210, 192);
- padding: 18px;
+ left: 0;
+ padding: 12px 0;
  position: sticky;
  top: 0;
+ width: 100%;
+z-index: 1000;
 }
 
 nav ul {
@@ -33,6 +36,7 @@ nav a {
     font-weight: 900;
     font-size: 1.4rem;
     font-family: "Lobster-Two", sans-serif;
+    padding: 8px 12px;
     text-decoration: none;
 }
 
@@ -148,7 +152,33 @@ h2{
     font-weight: 700;
     line-height: 1.5;
 }
+/*Skills CSS layout*/
+#skills {
+  padding: 20px;
+  text-align: center;
+}
 
+#skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+#skills li {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: white;
+  font-family: "Fjalla One", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 8px 12px;
+}
 
 
 
@@ -224,9 +254,7 @@ h2{
     align-items: center;
     flex-direction: column;
     gap: 10px;
-    margin: 0;
-    padding: 8px 0;
-  }
+}
 }
 
   /*Tablet responsiveness */
@@ -244,11 +272,16 @@ h2{
         padding: 20px 30px;
     }
 
+    #skills li {
+      font-size: 1rem;
+      padding: 10px 14px;
+    }
+
     nav ul {
       flex-direction: row;
       gap: 32px;
       justify-content: center;
       margin: 0;
-      padding: 12px 0;
+      padding: 12px 0px;
     }
 }
