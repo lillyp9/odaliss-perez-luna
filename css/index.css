@@ -1,9 +1,14 @@
+/* Design is desktop first */
+
 body{
  color: black;
  background-color: grey;
  font-family: Arial, sans-serif; 
+ font-size: 18px;
+ font-weight: 600;
+ line-height: 1.5;
  margin: 0;
- padding: 40; 
+ padding: 40px; 
 }
 
 /*Navigation bar layout */
@@ -191,7 +196,7 @@ h2{
 
 
 /* Mobile responsiveness */
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 480px) {
 
   h1 {
     font-size: 2rem;
@@ -225,7 +230,7 @@ h2{
 }
 
   /*Tablet responsiveness */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 481px) and (max-width: 1024px) {
 
     h1 {
       font-size: 2.5rem;
