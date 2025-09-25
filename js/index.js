@@ -1,15 +1,13 @@
 // ---Footer---//
-let today = new Date();
 
-let thisYear = today.getFullYear();
 
-let footer = document.querySelector("footer");
-
-let copyright = document.createElement("p");
-
-copyright.innerHTML = "Odaliss Perez &#169; " + thisYear;
-
-footer.appendChild(copyright);
+function createFooter() {
+    const footer = document.createElement("footer");
+    const thisYear = new Date().getFullYear();
+    footer.innerHTML = "<p>Odaliss Perez &#169; " + thisYear + "</p>";
+    document.body.appendChild(footer);
+}
+document.addEventListener("DOMContentLoaded", createFooter);
 
 //---Skills Section---//
 
