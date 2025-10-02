@@ -255,6 +255,10 @@ h2{
     flex-direction: column;
     gap: 10px;
 }
+
+#leave-message, #messages {
+   max-width: 90%;
+}
 }
 
   /*Tablet responsiveness */
@@ -284,4 +288,82 @@ h2{
       margin: 0;
       padding: 12px 0px;
     }
+   
+    #leave-message, #messages {
+   max-width: 90%;
+}
+
+}
+
+/*-- Form container --*/
+#leave-message,
+#messages {
+    background-color: rgb(68, 40, 40);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 24px auto;
+    max-width: 900px;
+    padding: 20px;
+}
+
+#leave-message label {
+    color: white;
+    display: block;
+    font-family: "Fjalla One", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+#leave-message input,
+#leave-message textarea {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 8px;
+    width: 90%;
+}
+
+#leave-message button:hover {
+    background-color: #555;
+    cursor: pointer;
+}
+
+/*-- Messages section --*/
+#messages ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#messages li {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: white;
+    font-family: "Fjalla One", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    padding: 12px;
+}
+
+#messages li a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+#messages li button {
+    background-color: #a83232;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 5px 11px;
+    margin-top: 8px;
+}
+
+#messages li button:hover {
+    background-color: #8b2626;
 }
