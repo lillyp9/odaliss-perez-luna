@@ -129,22 +129,16 @@
   <section id="leave-message">
     <h2>Leave a Message</h2>
     <form name="leave_message">
-      <label>
-        Name:
-        <input type="text" name="usersName" required>
-      </label><br>
+    <label for="usersName">Name:</label>
+      <input type="text" name="usersName" required><br>
+     
+    <label for="usersEmail">Email:</label>
+      <input type="email" name="usersEmail" required><br>
 
-      <label>
-        Email:
-        <input type="email" name="usersEmail" required>
-      </label><br>
+    <label for="usersMessage">Message:</label>
+      <textarea name="usersMessage" required></textarea><br>
 
-      <label>
-        Message:
-        <textarea name="usersMessage" required></textarea>
-      </label><br>
-
-      <button type="submit">Submit</button>
+    <button type="submit">Submit</button>
     </form>
   </section>
 

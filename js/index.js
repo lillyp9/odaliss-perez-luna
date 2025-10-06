@@ -51,8 +51,9 @@ const messageForm = document.getElementById("leave-message");
 const removeButton = document.createElement("button");
     removeButton.textContent = "Remove";
     removeButton.type = "button";
-    removeButton.addEventListener("click", () => newMessage.remove());
+    removeButton.addEventListener("click", () => this.parentNode.remove());
     newMessage.appendChild(removeButton);
 
     messageList.appendChild(newMessage);
+    messageForm.reset();
 });
