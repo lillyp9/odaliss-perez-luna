@@ -43,19 +43,22 @@ const messageForm = document.getElementById("leave-message");
     const message = event.target.usersMessage.value;
     console.log(name, email, message);
 
- const messageList = document.getElementById("messages-list");
- const newMessage = document.createElement("li");
+const messageList = document.getElementById("messages-list");
+const newMessage = document.createElement("li");
     newMessage.innerHTML = `<a href="mailto:${email}">${name}</a>: ${message}`;
     
 
 const removeButton = document.createElement("button");
     removeButton.textContent = "Remove";
     removeButton.type = "button";
-    removeButton.addEventListener("click", () => this.parentNode.remove());
+    removeButton.addEventListener("click", function () {
+    newMessage.remove();
+});
+  
     newMessage.appendChild(removeButton);
-
     messageList.appendChild(newMessage);
-    messageForm.reset();
+
+    event.target.reset();
 });
 
 //---Fetch GitHub Repositories---//
