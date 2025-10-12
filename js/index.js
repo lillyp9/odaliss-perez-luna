@@ -63,3 +63,34 @@ const removeButton = document.createElement("button");
 
 //---Fetch GitHub Repositories---//
 
+fetch('https://api.github.com/users/lillyp9/repos', { method: 'GET' }) 
+
+.then(response => {
+    if (!response.ok) {
+        throw new Error(`Network not responding! Status: ${response.status}`);
+    }
+    return response.json();
+})
+
+.then(repositories => {
+    console.log(repositories);
+    
+    const projectSection = document.getElementById("projects");                     
+    const projectList = projectSection.querySelector('ul'); 
+   
+    for (let i = 0; i < repositories.length; i++) {
+        const project = repositories[i];
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        
+        a.href = project.html_url;
+        a.target = "_blank";
+        a.textContent = project.name;
+        
+        li.appendChild(a);
+        projectList.appendChild(li);
+    }
+})
+.catch(error => {
+    console.error('There was a problem with the fetch operation:', error.message);
+});
