@@ -103,3 +103,4 @@ errorMessage.textContent = 'Sorry, we are unable to load the projects at this ti
 errorMessage.style.color = 'red';
 projectList.appendChild(errorMessage);
 
+});
