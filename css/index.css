@@ -384,3 +384,37 @@ button[type="submit"]:hover {
     background-color: #555;
     cursor: pointer;
 }
+
+#projects-list {
+    dsiplay:flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#projects-list li {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: white;
+    font-family: "Fjalla One", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    padding: 12px;
+}
+
+
+#projects-list li a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+
+#projects-list li a:hover {
+    color: #ddd;
+    cursor: pointer;
+}    

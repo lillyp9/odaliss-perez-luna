@@ -60,3 +60,47 @@ const removeButton = document.createElement("button");
 
     event.target.reset();
 });
+
+//---Fetch GitHub Repositories---//
+
+fetch('https://api.github.com/users/lillyp9/repos', { method: 'GET' }) 
+
+.then(response => {
+    if (!response.ok) {
+        throw new Error(`Network not responding! Status: ${response.status}`);
+    }
+    return response.json();
+})
+
+.then(repositories => {
+    console.log(repositories);
+    
+    const projectSection = document.getElementById("projects");                     
+    const projectList = projectSection.querySelector('ul'); 
+   
+    for (let i = 0; i < repositories.length; i++) {
+        const project = repositories[i];
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        
+        a.href = project.html_url;
+        a.target = "_blank";
+        a.textContent = project.name;
+        
+        li.appendChild(a);
+        projectList.appendChild(li);
+    }
+})
+/* Console log for developers*/
+.catch(error => {
+    console.error('There was a problem with the fetch operation:', error.message);
+});
+
+/* Show message to regular users */
+const projectList = document.getElementById('projects-list');
+const errorMessage = document.createElement('li');
+errorMessage.textContent = 'Sorry, we are unable to load the projects at this time. Please try again later.';
+errorMessage.style.color = 'red';
+projectList.appendChild(errorMessage);
+
+});
