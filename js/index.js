@@ -91,7 +91,15 @@ fetch('https://api.github.com/users/lillyp9/repos', { method: 'GET' })
         projectList.appendChild(li);
     }
 })
+/* Console log for developers*/
 .catch(error => {
     console.error('There was a problem with the fetch operation:', error.message);
 });
+
+/* Show message to regular users */
+const projectList = document.getElementById('projects-list');
+const errorMessage = document.createElement('li');
+errorMessage.textContent = 'Sorry, we are unable to load the projects at this time. Please try again later.';
+errorMessage.style.color = 'red';
+projectList.appendChild(errorMessage);
 
