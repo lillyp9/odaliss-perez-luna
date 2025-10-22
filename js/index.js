@@ -92,7 +92,7 @@ fetch('https://api.github.com/users/lillyp9/repos', { method: 'GET' })
         projectList.appendChild(li);
     }
 })
-/* Console log for developers*/
+/* Console log for developers and message for regular users */
 .catch(error => {
     const projectList = document.getElementById('projects-list');
     const errorMessage = document.createElement('li');
@@ -104,6 +104,3 @@ fetch('https://api.github.com/users/lillyp9/repos', { method: 'GET' })
 
 
 
-
-
-});
