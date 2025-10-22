@@ -252,7 +252,6 @@ h2{
 
   nav ul {
     align-items: center;
-    flex-direction: column;
     gap: 10px;
 }
 
@@ -386,7 +385,7 @@ button[type="submit"]:hover {
 }
 
 #projects-list {
-    dsiplay:flex;
+    display:flex;
     flex-direction: column;
     gap: 16px;
     list-style-type: none;
@@ -398,7 +397,7 @@ button[type="submit"]:hover {
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 8px;
-    color: white;
+    color: rgb(221, 209, 209);
     font-family: "Fjalla One", sans-serif;
     font-size: 1.2rem;
     font-weight: 700;
@@ -409,12 +408,12 @@ button[type="submit"]:hover {
 
 
 #projects-list li a {
-    color: whitesmoke;
+    color: rgb(245, 231, 231);
     text-decoration: none;
 }
 
 
 #projects-list li a:hover {
-    color: #ddd;
+    color: #252121;
     cursor: pointer;
 }    
