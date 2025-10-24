@@ -35,25 +35,26 @@ for (let i = 0; i < skills.length; i++) {
 
 const messageForm = document.getElementById("leave-message");
 
-    messageForm.addEventListener("submit", function (event) {
+messageForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const name = event.target.usersName.value;
     const email = event.target.usersEmail.value;
     const message = event.target.usersMessage.value;
+
     console.log(name, email, message);
 
-const messageList = document.getElementById("messages-list");
-const newMessage = document.createElement("li");
+    const messageList = document.getElementById("messages-list");
+    const newMessage = document.createElement("li");
     newMessage.innerHTML = `<a href="mailto:${email}">${name}</a>: ${message}`;
     
 
-const removeButton = document.createElement("button");
+    const removeButton = document.createElement("button");
     removeButton.textContent = "Remove";
     removeButton.type = "button";
     removeButton.addEventListener("click", function () {
-    newMessage.remove();
-});
+        newMessage.remove();
+    });
   
     newMessage.appendChild(removeButton);
     messageList.appendChild(newMessage);
@@ -91,16 +92,15 @@ fetch('https://api.github.com/users/lillyp9/repos', { method: 'GET' })
         projectList.appendChild(li);
     }
 })
-/* Console log for developers*/
+/* Console log for developers and message for regular users */
 .catch(error => {
+    const projectList = document.getElementById('projects-list');
+    const errorMessage = document.createElement('li');
+    errorMessage.textContent = 'Sorry, we are unable to load the projects at this time. Please try again later.';
+    errorMessage.style.color = 'red';
+    projectList.appendChild(errorMessage);
     console.error('There was a problem with the fetch operation:', error.message);
 });
 
-/* Show message to regular users */
-const projectList = document.getElementById('projects-list');
-const errorMessage = document.createElement('li');
-errorMessage.textContent = 'Sorry, we are unable to load the projects at this time. Please try again later.';
-errorMessage.style.color = 'red';
-projectList.appendChild(errorMessage);
 
-});
+
