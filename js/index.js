@@ -1,34 +1,32 @@
 // ---Footer---//
 
-
-function createFooter() {
-    const footer = document.createElement("footer");
-    const thisYear = new Date().getFullYear();
-    footer.innerHTML = "<p>Odaliss Perez &#169; " + thisYear + "</p>";
-    document.body.appendChild(footer);
-}
-document.addEventListener("DOMContentLoaded", createFooter);
+const footerText = document.createElement("footer-text");
+const thisYear = new Date().getFullYear();
+footerText.innerHTML = "<p>Odaliss Perez &#169; " + thisYear + "</p>";
+document.addEventListener("DOMContentLoaded", function () {
+  const footer = document.getElementById("site-footer");
+  footer.appendChild(footerText);
+});
 
 //---Skills Section---//
 
-
 const skills = [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "Git",
-    "GitHub",
-    "Responsive Design",
-    "Flexbox",
-    "DOM Manipulation"
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "Git",
+  "GitHub",
+  "Responsive Design",
+  "Flexbox",
+  "DOM Manipulation",
 ];
 const skillsSection = document.getElementById("skills");
 const skillsList = skillsSection.querySelector("ul");
 
 for (let i = 0; i < skills.length; i++) {
-    const li = document.createElement("li");
-    li.innerText = skills[i];
-    skillsList.appendChild(li);
+  const li = document.createElement("li");
+  li.innerText = skills[i];
+  skillsList.appendChild(li);
 }
 
 //---Leave a Message Form---//
@@ -36,71 +34,69 @@ for (let i = 0; i < skills.length; i++) {
 const messageForm = document.getElementById("leave-message");
 
 messageForm.addEventListener("submit", function (event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    const name = event.target.usersName.value;
-    const email = event.target.usersEmail.value;
-    const message = event.target.usersMessage.value;
+  const name = document.getElementById("usersName").value;
+  const email = document.getElementById("usersEmail").value;
+  const message = document.getElementById("usersMessage").value;
 
-    console.log(name, email, message);
+  console.log(name, email, message);
 
-    const messageList = document.getElementById("messages-list");
-    const newMessage = document.createElement("li");
-    newMessage.innerHTML = `<a href="mailto:${email}">${name}</a>: ${message}`;
-    
+  //Function to dsiplay the message on the page and have the button //
 
-    const removeButton = document.createElement("button");
-    removeButton.textContent = "Remove";
-    removeButton.type = "button";
-    removeButton.addEventListener("click", function () {
-        newMessage.remove();
-    });
-  
-    newMessage.appendChild(removeButton);
-    messageList.appendChild(newMessage);
+  const messageList = document.getElementById("messages-list");
+  const newMessage = document.createElement("li");
+  newMessage.innerHTML = `<a href="mailto:${email}">${name}</a>: ${message}`;
 
-    event.target.reset();
+  const removeButton = document.createElement("button");
+  removeButton.textContent = "Remove";
+  removeButton.type = "button";
+  removeButton.addEventListener("click", function () {
+    newMessage.remove();
+  });
+
+  newMessage.appendChild(removeButton);
+  messageList.appendChild(newMessage);
+
+  event.target.reset();
 });
 
 //---Fetch GitHub Repositories---//
+const projectSection = document.getElementById("projects-list");
 
-fetch('https://api.github.com/users/lillyp9/repos', { method: 'GET' }) 
-
-.then(response => {
+fetch("https://api.github.com/users/lillyp9/repos", { method: "GET" })
+  .then((response) => {
     if (!response.ok) {
-        throw new Error(`Network not responding! Status: ${response.status}`);
+      throw new Error(`Network not responding! Status: ${response.status}`);
     }
     return response.json();
-})
+  })
+  .then((response) => {
+    projectSection.innerHTML = "";
+    response.forEach((repo) => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = repo.html_url;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.textContent = repo.name;
+      a.setAttribute("aria-label", `Link to ${repo.name} repository`);
 
-.then(repositories => {
-    console.log(repositories);
-    
-    const projectSection = document.getElementById("projects");                     
-    const projectList = projectSection.querySelector('ul'); 
-   
-    for (let i = 0; i < repositories.length; i++) {
-        const project = repositories[i];
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        
-        a.href = project.html_url;
-        a.target = "_blank";
-        a.textContent = project.name;
-        
-        li.appendChild(a);
-        projectList.appendChild(li);
-    }
-})
-/* Console log for developers and message for regular users */
-.catch(error => {
-    const projectList = document.getElementById('projects-list');
-    const errorMessage = document.createElement('li');
-    errorMessage.textContent = 'Sorry, we are unable to load the projects at this time. Please try again later.';
-    errorMessage.style.color = 'red';
+      li.appendChild(a);
+      projectSection.appendChild(li);
+    });
+  })
+
+  /* Console log for developers and message for regular users */
+  .catch((error) => {
+    const projectList = document.getElementById("projects-list");
+    const errorMessage = document.createElement("li");
+    errorMessage.textContent =
+      "Sorry, we are unable to load the projects at this time. Please try again later.";
+    errorMessage.style.color = "red";
     projectList.appendChild(errorMessage);
-    console.error('There was a problem with the fetch operation:', error.message);
-});
-
-
-
+    console.error(
+      "There was a problem with the fetch operation:",
+      error.message
+    );
+  });
