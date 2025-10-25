@@ -1,157 +1,177 @@
 /* Design is desktop first */
 
-body{
- color: black;
- background-color: grey;
- font-family: Arial, sans-serif; 
- font-size: 18px;
- font-weight: 600;
- line-height: 1.5;
- margin: 0;
- padding: 40px; 
+body {
+  color: black;
+  background-color: grey;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+  padding: 40px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 /*Navigation bar layout */
 nav {
- background-color: rgb(214, 210, 192);
- left: 0;
- padding: 12px 0;
- position: sticky;
- top: 0;
- width: 100%;
-z-index: 1000;
+  background-color: rgb(214, 210, 192);
+  left: 0;
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 nav ul {
- display: flex;
- gap: 25px;
- justify-content: center;
- list-style-type: none;
- margin: 0;
- padding: 0;
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 nav a {
-    color: black;
-    font-weight: 900;
-    font-size: 1.4rem;
-    font-family: "Lobster-Two", sans-serif;
-    padding: 8px 12px;
-    text-decoration: none;
+  color: black;
+  font-weight: 900;
+  font-size: 1.4rem;
+  font-family: "Lobster-Two", sans-serif;
+  padding: 8px 12px;
+  text-decoration: none;
 }
 
 nav a:hover {
-    color: #fff;
-    transform: translateY(-2px);
-    transition: all 0.3s ease;
+  color: #fff;
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
 }
 
 /*Section layout */
 section {
- background-color: rgb(68, 40, 40);
- border-bottom: 5px solid #ddd;
- border-radius: 12px;
- box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
- margin: 24px auto;
- margin-bottom: 20px;
- max-width: 900px;
- padding: 0 16px;
+  background-color: rgb(68, 40, 40);
+  border-bottom: 5px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 24px auto;
+  margin-bottom: 20px;
+  max-width: 900px;
+  padding: 0 16px;
 }
 
-/* Experience Section with Flexbox */
-#Experience li {
-    border-bottom: 1px solid rgba(225,255,255,0.5);
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    padding-bottom: 10px;
-   
+/* Site Header + Site Footer */
+.site-header {
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1000;
+  position: sticky;
+  top: 0;
 }
 
-#Experience ul {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.job-title {
-    color:rgb(20, 16, 16);
-    font-family: "Fjalla One", sans-serif;
-    font-weight: 900;
-    font-size: 2.1rem;
-    margin-bottom: 5px;
-    padding: 0px;
-    padding-bottom: 20px;   
-}
-
-.job-date {
-    align-self: center;
-    color: #d1b3b3;
-    font-style: italic;
-    font-family: "Lobster-Two", sans-serif;
-    font-weight: 700;
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-}
-
-.job-desc {
-    color :antiquewhite;
-    font-size: 1.5rem;
-    font-weight: 600;
-    font-family: "Fjalla One", sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    max-width: 700px;
-    text-align: left;
+#site-footer {
+  background-color: rgb(214, 210, 192);
+  border-top: 10px solid #252121;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-top: auto;
+  padding: 10px 10px;
 }
 
 /*Banner*/
-h1{
-    color: white;
-    font-size: 3rem;
-    font-family: "Rubik Mono One", sans-serif;
-    font-weight: 400;
-    padding: 20px;
-    margin: 0;
-    text-align: center;
+h1 {
+  color: white;
+  font-size: 3rem;
+  font-family: "Rubik Mono One", sans-serif;
+  font-weight: 400;
+  padding: 20px;
+  margin: 0;
+  text-align: center;
 }
 
-h2{
-    color: rgb(163, 157, 157);
-    text-align: center;
-    font-size: 3rem;
-    font-family: "Rubik Mono One", sans-serif;
-    font-weight: 350;
-    padding: 20px;
-    margin: 0;
+h2 {
+  color: rgb(163, 157, 157);
+  text-align: center;
+  font-size: 3rem;
+  font-family: "Rubik Mono One", sans-serif;
+  font-weight: 350;
+  padding: 20px;
+  margin: 0;
 }
 
 /* About CSS layout */
-#About {
-    font-family: "Fjalla One", sans-serif;
-    text-align: center;
-    padding: 20px;
+#about {
+  font-family: "Fjalla One", sans-serif;
+  text-align: center;
+  padding: 20px;
 }
 
 #About img {
-    border-radius: 12px;
-    display: center;
-    margin: 0 auto 20px;
-    max-width: 250px;
-    padding: 25px;
-   
+  border-radius: 12px;
+  display: center;
+  margin: 0 auto 20px;
+  max-width: 250px;
+  padding: 25px;
 }
 
-#About p {
-    color: white;
-    font-family: "Fjalla One", sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 1.5;
+#about p {
+  color: white;
+  font-family: "Fjalla One", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
 }
+
+/* Experience Section with Flexbox */
+#experience li {
+  border-bottom: 1px solid rgba(225, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-bottom: 10px;
+}
+
+#experience ul {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.job-title {
+  color: rgb(20, 16, 16);
+  font-family: "Fjalla One", sans-serif;
+  font-weight: 900;
+  font-size: 2.1rem;
+  margin-bottom: 5px;
+  padding: 0px;
+  padding-bottom: 20px;
+}
+
+.job-date {
+  align-self: center;
+  color: #d1b3b3;
+  font-style: italic;
+  font-family: "Lobster-Two", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.job-desc {
+  color: antiquewhite;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: "Fjalla One", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 700px;
+  text-align: left;
+}
+
 /*Skills CSS layout*/
 #skills {
   padding: 20px;
@@ -159,14 +179,13 @@ h2{
 }
 
 #skills ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 16px;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
-
 
 #skills li {
   background: rgba(255, 255, 255, 0.1);
@@ -180,12 +199,40 @@ h2{
   padding: 8px 12px;
 }
 
+#projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
+#projects-list li {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: rgb(221, 209, 209);
+  font-family: "Fjalla One", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  padding: 12px;
+}
 
+#projects-list li a {
+  color: rgb(245, 231, 231);
+  text-decoration: none;
+}
 
+#projects-list li a:hover {
+  color: #252121;
+  cursor: pointer;
+}
 
 /*Connect CSS layout*/
-#Connect ul {
+#connect ul {
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -195,7 +242,7 @@ h2{
   padding: 0;
 }
 
-#Connect li a {
+#connect li a {
   color: rgb(18, 18, 49);
   display: inline-block;
   font-family: "Fjalla One", sans-serif;
@@ -207,213 +254,214 @@ h2{
   text-align: center;
 }
 
-
-#Connect li a:hover {
+#connect li a:hover {
   color: white;
   transform: translateY(-1px);
   transition: all 0.3s ease;
 }
 
-/* Sticky Header */
-.site-header {
-    background: rgba(20,20,20,0.85);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    z-index: 1000;
-    position: sticky;
-    top: 0;
+/*-- Form container --*/
+#leave-message,
+#messages {
+  background-color: rgb(68, 40, 40);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 24px auto;
+  max-width: 900px;
+  padding: 20px;
 }
 
+#leave-message label {
+  color: white;
+  display: block;
+  font-family: "Fjalla One", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+#leave-message input,
+#leave-message textarea {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  padding: 8px;
+  width: 90%;
+}
 
-/* Mobile responsiveness */
+#leave-message button:hover {
+  background-color: #555;
+  cursor: pointer;
+}
+
+/*-- Messages section --*/
+#messages-list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#messages-list li {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  font-family: "Fjalla One", sans-serif;
+  margin-bottom: 15px;
+  gap: 0;
+  padding: 15px;
+}
+#messages-list li a {
+  color: whitesmoke;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  margin-right: 8px;
+}
+
+#messages-list li button {
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: auto;
+}
+
+#messages li button:hover {
+  background-color: #8b2626;
+}
+
+button[type="submit"] {
+  background-color: black;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 10px 20px;
+  margin-top: 12px;
+}
+
+button[type="submit"]:hover {
+  background-color: #555;
+  cursor: pointer;
+}
+
+/************ Responsiveness for the devices *****/
+
+/* Mobile responsiveness - Stack vertically with smaller text */
 @media (max-width: 480px) {
-
   h1 {
     font-size: 2rem;
+    line-height: 1.2;
   }
 
   h2 {
     font-size: 1.5rem;
+    line-height: 1.25;
   }
 
-  #About img {
+  #about img {
     max-width: 150px;
+    margin: 0 auto 12px;
+    padding: 16px;
+    width: 60%;
   }
 
-  #Experience {
-    margin-left: 20px;
-    font-size: 16px;
+  #experience {
+    margin-left: 0;
+    font-size: 1rem;
   }
 
-  #Connect li a {
-    font-size: 1.5rem;
-    margin-bottom: 16px;
+  #connect li a {
+    display: inline-block;
+    font-size: 1rem;
+    margin: 4px 6px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
 
   nav ul {
-    align-items: center;
-    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5px; /*Reduced gap for smaller screens*/
+    padding: 0;
+  }
+
+  nav ul li a {
+    font-size: 0.75rem; /*Smaller font size for mobile*/
+    padding: 6px 8px; /*compact padding*/
+  }
+
+  #leave-message,
+  #messages {
+    max-width: 90%;
+  }
 }
 
-#leave-message, #messages {
-   max-width: 90%;
-}
-}
-
-  /*Tablet responsiveness */
-@media (min-width: 481px) and (max-width: 1024px) {
-
-    h1 {
-      font-size: 2.5rem;
-    }
-
-    h2 {
-        font-size: 1.6rem;
-    }
-
-    section {
-        padding: 20px 30px;
-    }
-
-    #skills li {
-      font-size: 1rem;
-      padding: 10px 14px;
-    }
-
-    nav ul {
-      flex-direction: row;
-      gap: 32px;
-      justify-content: center;
-      margin: 0;
-      padding: 12px 0px;
-    }
-   
-    #leave-message, #messages {
-   max-width: 90%;
-}
-
-}
-
-/*-- Form container --*/
+#section,
+#about,
+#experience,
+#skills,
+#projects,
+#connect,
 #leave-message,
 #messages {
-    background-color: rgb(68, 40, 40);
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 24px auto;
-    max-width: 900px;
-    padding: 20px;
+  max-width: 100%;
+  margin: 12px 0;
+  padding: 16px;
+  width: 100%;
 }
 
-#leave-message label {
-    color: white;
-    display: block;
-    font-family: "Fjalla One", sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 8px;
+.job-title {
+  font-size: 1.5rem;
 }
-#leave-message input,
-#leave-message textarea {
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.job-date {
+  font-size: 1rem;
+}
+.job-desc {
+  font-size: 1rem;
+}
+
+/*Tablet responsiveness - Tablets sometimes horizontal or using larger spacing*/
+@media (min-width: 481px) and (max-width: 1024px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  section {
+    padding: 20px 30px;
+  }
+
+  #skills li {
     font-size: 1rem;
-    padding: 8px;
-    width: 90%;
-}
+    padding: 10px 14px;
+  }
 
-#leave-message button:hover {
-    background-color: #555;
-    cursor: pointer;
-}
+  nav ul {
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
 
-/*-- Messages section --*/
-#messages ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-#messages li {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 8px;
-    color: white;
-    font-family: "Fjalla One", sans-serif;
+  nav ul li a {
     font-size: 1rem;
-    font-weight: 700;
-    line-height: 1.4;
-    margin-bottom: 12px;
-    padding: 12px;
+  }
+
+  #leave-message,
+  #messages {
+    max-width: 90%;
+  }
 }
-
-#messages li a {
-    color: whitesmoke;
-    text-decoration: none;
-}
-
-#messages li button {
-    background-color: #a83232;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    cursor: pointer;
-    font-size: 0.9rem;
-    padding: 5px 11px;
-    margin-top: 8px;
-}
-
-#messages li button:hover {
-    background-color: #8b2626;
-}
-
-button[type="submit"] {
-    background-color: black;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: 700;
-    padding: 10px 20px;
-    margin-top: 12px;
-}
-
-button[type="submit"]:hover {
-    background-color: #555;
-    cursor: pointer;
-}
-
-#projects-list {
-    display:flex;
-    flex-direction: column;
-    gap: 16px;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-#projects-list li {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 8px;
-    color: rgb(221, 209, 209);
-    font-family: "Fjalla One", sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    line-height: 1.4;
-    margin-bottom: 12px;
-    padding: 12px;
-}
-
-
-#projects-list li a {
-    color: rgb(245, 231, 231);
-    text-decoration: none;
-}
-
-
-#projects-list li a:hover {
-    color: #252121;
-    cursor: pointer;
-}    
